@@ -1,6 +1,6 @@
 # Deadline - Intercept Process
 Event plugin for Thinkbox Deadline that intercepts a process in various ways.
-#### Big note: Currently works only on nodes that run Windows. 
+#### Big note: Currently works only on nodes that run Windows and use Nvidea GPUs
 
 To use this plugin, place the "intercept_events" folder inside [REPOSITORY]/events or [REPOSITORY]/custom/events
 
