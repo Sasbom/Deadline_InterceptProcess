@@ -1,0 +1,60 @@
+[State]
+Type=Enum
+Items=Global Enabled;Disabled
+Category=Options
+CategoryOrder=0
+CategoryIndex=0
+Label=State
+Default=Global Enabled
+Description=How this event plugin should respond to events. If Global, all jobs and Workers will trigger the events for this plugin. If Opt-In, jobs and Workers can choose to trigger the events for this plugin. If Disabled, no events are triggered for this plugin.
+
+[Process]
+Type=String
+Category=Options
+CategoryOrder=0
+CategoryIndex=1
+Label=Process to look for in worker
+Default=some_process_daemon.exe
+Description=Name of the process that this plugin should look for
+
+[GPU_limit]
+Type=Integer
+Maximum=99
+Minimum=1
+Category=Options
+CategoryOrder=0
+CategoryIndex=2
+Label=GPU activity threshold
+Default=30
+Description=Percentage of GPU activity before activity takes place
+
+[Action]
+Type=Enum
+Items=Bounce;Kill;
+Category=Options
+CategoryOrder=0
+CategoryIndex=5
+Label=Action to take
+Default=Bounce
+Description=Select action to take when process is found and GPU threshold is crossed. "Bounce" reschedules, "Kill" will kill found task.
+
+
+[KillOnPriority]
+Type=Boolean
+Category=Options
+CategoryOrder=0
+CategoryIndex=4
+Label=Kill Process on High Priority
+Default=0
+Description=If enabled and incoming job has a high priority, kill process
+
+[Priority_threshold]
+Type=Integer
+Maximum = 0
+Minimum = 100
+Category=Options
+CategoryOrder=0
+CategoryIndex=5
+Label=Process Priority.
+Default=80
+Description=If an incoming job reaches this threshold, the guest process will be killed once a more important job enters. You can think of this as the process' own priority.
